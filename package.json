@@ -9,15 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-three/drei": "^9.x",
+    "@react-three/fiber": "^8.x",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.x",
     "three": "^0.x",
-    "@react-three/fiber": "^8.x",
-    "@react-three/drei": "^9.x"
+    "three-mesh-bvh": "^0.8.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.x",
     "vite": "^4.x"
   }
-} 
+}
