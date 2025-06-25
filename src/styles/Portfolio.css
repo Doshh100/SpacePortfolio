@@ -1,0 +1,195 @@
+.solar-system {
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  position: relative;
+  overflow: hidden;
+  cursor: grab;
+  transform-origin: center;
+  transition: transform 0.1s ease;
+}
+
+.solar-system.dragging {
+  cursor: grabbing;
+  transition: none;
+}
+
+.sun {
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(#ffd700, #ff4500);
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 50px #ff4500;
+}
+
+/* Planet Base Styles */
+.planet {
+  position: absolute;
+  border-radius: 50%;
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+/* Individual Planet Styles */
+.mercury {
+  width: 40px;
+  height: 40px;
+  background: #888;
+  left: calc(50% - 100px);
+  top: calc(50% - 100px);
+  animation: orbit 8s linear infinite;
+}
+
+.venus {
+  width: 50px;
+  height: 50px;
+  background: #e6b800;
+  left: calc(50% - 150px);
+  top: calc(50% - 150px);
+  animation: orbit 12s linear infinite;
+}
+
+.earth {
+  width: 55px;
+  height: 55px;
+  background: #4b9cd3;
+  left: calc(50% - 200px);
+  top: calc(50% - 200px);
+  animation: orbit 16s linear infinite;
+}
+
+.mars {
+  width: 45px;
+  height: 45px;
+  background: #ff4d4d;
+  left: calc(50% - 250px);
+  top: calc(50% - 250px);
+  animation: orbit 20s linear infinite;
+}
+
+.jupiter {
+  width: 80px;
+  height: 80px;
+  background: #e6b800;
+  left: calc(50% - 300px);
+  top: calc(50% - 300px);
+  animation: orbit 24s linear infinite;
+}
+
+/* Planet Info Popup */
+.planet-info {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  width: 200px;
+  left: 120%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  pointer-events: none;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.planet-info h3 {
+  margin: 0 0 10px 0;
+  color: #4a9eff;
+}
+
+.planet-info p {
+  margin: 0;
+  font-size: 0.9em;
+}
+
+/* Rocket Styles */
+.rocket {
+  width: 30px;
+  height: 30px;
+  position: fixed;
+  pointer-events: none;
+  z-index: 1000;
+  transition: transform 0.2s ease;
+  content: "🚀";
+  font-size: 24px;
+  text-align: center;
+  line-height: 30px;
+}
+
+/* Orbit Animation */
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(100px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(100px) rotate(-360deg);
+  }
+}
+
+/* Planet Hover Effect */
+.planet:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* Add these styles for orbit lines and adjusted spacing */
+.orbit-line {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.mercury-orbit {
+  width: 200px;
+  height: 200px;
+}
+
+.venus-orbit {
+  width: 300px;
+  height: 300px;
+}
+
+.earth-orbit {
+  width: 400px;
+  height: 400px;
+}
+
+.mars-orbit {
+  width: 500px;
+  height: 500px;
+}
+
+.jupiter-orbit {
+  width: 500px;
+  height: 500px;
+}
+
+/* Add background stars */
+.stars {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 1s infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.3; }
+  to { opacity: 1; }
+} 
