@@ -39,8 +39,8 @@ const ContactPage = () => {
         <div className="social-links">
           <a href="https://www.linkedin.com/in/tanaka-danny-chijaka-04595a257/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
           <a href="https://github.com/Doshh100" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
-          <a href="@https://www.instagram.com/just_.dannn/" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <a href="@https://www.facebook.com/danny.chijaa.3" target="_blank" rel="noopener noreferrer">Facebook</a>
+          <a href="https://www.instagram.com/just_.dannn/#" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.facebook.com/me/" target="_blank" rel="noopener noreferrer">Facebook</a>
         </div>
       </div>
       
