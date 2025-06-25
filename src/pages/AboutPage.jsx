@@ -10,7 +10,7 @@ const RotatingPlanet = ({ texture, radius }) => {
   const textureMap = useTexture(texture);
 
   useFrame(() => {
-    meshRef.current.rotation.y += 0.001; // Slow rotation
+    meshRef.current.rotation.y += 0.002; // Slow rotation
   });
 
   return (

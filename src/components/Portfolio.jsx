@@ -213,42 +213,42 @@ const SolarSystem = ({ onPlanetClick, onPlanetHover, planetInfo }) => {
       radius: 0.4,
       orbitRadius: 3,
       speed: 0.5,
-      texture: '/textures/mercury.jpg',
+      texture: './textures/mercury.jpg',
       info: planetInfo.mercury
     },
     venus: {
       radius: 0.6,
       orbitRadius: 5,
       speed: 0.4,
-      texture: '/textures/venus.jpg',
+      texture: './textures/venus.jpg',
       info: planetInfo.venus
     },
     earth: {
       radius: 0.7,
       orbitRadius: 7,
       speed: 0.3,
-      texture: '/textures/earth.jpg',
+      texture: './textures/earth.jpg',
       info: planetInfo.earth
     },
     mars: {
       radius: 0.5,
       orbitRadius: 9,
       speed: 0.25,
-      texture: '/textures/mars.jpg',
+      texture: './textures/mars.jpg',
       info: planetInfo.mars
     },
     jupiter: {
       radius: 1.2,
       orbitRadius: 12,
       speed: 0.2,
-      texture: '/textures/jupiter.jpg',
+      texture: './textures/jupiter.jpg',
       info: planetInfo.jupiter
     },
     saturn: {
       radius: 1.0,
       orbitRadius: 15,
       speed: 0.18,
-      texture: '/textures/saturn.jpg',
+      texture: './textures/saturn.jpg',
       info: planetInfo.saturn,
       hasRings: true  // Special flag for Saturn's rings
     },
@@ -256,7 +256,7 @@ const SolarSystem = ({ onPlanetClick, onPlanetHover, planetInfo }) => {
       radius: 1.5,
       orbitRadius: 18,
       speed: 0.15,
-      texture: '/textures/blackhole.jpg',
+      texture: './textures/blackhole.jpg',
       info: planetInfo.blackhole,
       isBlackHole: true  // Special flag for black hole effects
     }
