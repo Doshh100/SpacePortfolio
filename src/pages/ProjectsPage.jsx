@@ -61,7 +61,7 @@ const ProjectsPage = () => {
           <div className="project-card">
             <h2>Space Portfolio</h2>
             <div className="project-links">
-              <a href="https://github.com/Doshh100/Portfolio1/tree/main" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://github.com/Doshh100/SpacePortfolio.git" target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
             <p>An interactive space-themed portfolio website with 3D animations.</p>
             <div className="tech-stack">
