@@ -3,22 +3,28 @@
 }
 
 body, html {
-  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  background: #000 !important;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.page, .content {
+  color: #fff;
+  padding-top: 80px;
 }
 
 .page {
   min-height: 100vh;
-  background: #000;
-  color: #000;
+  background: transparent;
   padding: 2rem;
   animation: fadeIn 0.5s ease-in;
+  position: relative;
 }
 
 .content {
   max-width: 1200px;
   margin: 0 auto;
-  position: relative;
-  z-index: 1;
   background: rgba(0, 0, 0, 0.7);
   padding: 2rem;
   border-radius: 15px;
@@ -27,19 +33,27 @@ body, html {
 }
 
 .contact-info {
-  background:rgba(33, 33, 33, 0.2);
-  margin: 2rem 0;
+  background: rgba(33, 33, 33, 0.2);
+  margin: 2rem 0 1rem 0;
   line-height: 1.6;
+  border-radius: 8px;
+  padding: 1rem;
 }
 
 .social-links a, .project-links a {
   color: #4a9eff;
   text-decoration: none;
-  margin-right: 1rem;
   padding: 0.5rem 1rem;
   border: 1px solid #4a9eff;
   border-radius: 5px;
   transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  margin: 0;
+  font-size: 1rem;
+  word-break: break-word;
 }
 
 .social-links a:hover, .project-links a:hover {
@@ -188,8 +202,15 @@ body, html {
 
 /* Responsive adjustments for mobile devices */
 @media (max-width: 900px) {
+  .page {
+    padding: 1rem;
+  }
   .content {
     padding: 1.2rem;
+    max-width: 100vw;
+    width: 100vw;
+    margin: 0;
+    border-radius: 10px;
   }
   .skills-grid, .projects-grid {
     grid-template-columns: 1fr;
@@ -201,15 +222,30 @@ body, html {
 }
 
 @media (max-width: 600px) {
+  .tab-nav {
+    gap: 4px;
+    padding: 6px 0;
+  }
+  .tab-link {
+    font-size: 0.95rem;
+    padding: 8px 10px;
+    margin: 0 2px;
+  }
+  .page {
+    padding: 0.3rem;
+  }
   .content {
     padding: 0.5rem;
     border-radius: 8px;
+    max-width: 100vw;
+    width: 100vw;
+    margin: 0;
   }
   h1 {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
   }
   h2 {
-    font-size: 1.2rem;
+    font-size: 1.05rem;
   }
   .skills-grid, .projects-grid {
     grid-template-columns: 1fr;
@@ -227,16 +263,199 @@ body, html {
     padding: 0.4rem 0.7rem;
     font-size: 0.95rem;
   }
+  .page, .content {
+    padding-top: 60px;
+  }
 }
 
 @media (max-width: 400px) {
+  .page {
+    padding: 0.1rem;
+  }
   .content {
-    padding: 0.2rem;
+    padding: 0.1rem;
+    border-radius: 5px;
+    max-width: 100vw;
+    width: 100vw;
+    margin: 0;
   }
   h1 {
-    font-size: 1.1rem;
-  }
-  h2 {
     font-size: 1rem;
   }
+  h2 {
+    font-size: 0.9rem;
+  }
+}
+
+.tab-nav {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  background: rgba(20, 20, 20, 0.98);
+  padding: 10px 0;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  gap: 10px;
+  overflow-x: auto;
+  overflow-y: hidden;
+    scrollbar-width: thin;
+  }
+  
+  .tab-nav::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .tab-nav::-webkit-scrollbar-thumb {
+    background-color: rgba(20, 20, 20, 0.5);
+    border-radius: 10px;
+  }
+
+
+.tab-link {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 5px;
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 1rem;
+  background: transparent;
+  transition: background 0.3s, transform 0.3s;
+  white-space: nowrap;
+  border: none;
+  outline: none;
+  display: inline-block;
+}
+
+.tab-link.active,
+.tab-link[aria-current="page"] {
+  background: #4a9eff;
+  color: #fff;
+  transform: scale(1.08);
+}
+
+.tab-link:hover {
+  background: #4a9eff;
+  color: #fff;
+  transform: scale(1.08);
+}
+
+@media (max-width: 600px) {
+  .tab-nav {
+    gap: 4px;
+    padding: 6px 0;
+  }
+  .tab-link {
+    font-size: 0.95rem;
+    padding: 8px 10px;
+    margin: 0 2px;
+  }
+}
+
+.return-btn {
+  position: fixed;
+  top: 40px;
+  right: 14px;
+  background: #4a9eff;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  transition: background 0.3s, transform 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.95rem;
+  z-index: 9999 !important;
+  pointer-events: auto;
+  text-decoration: none;
+}
+
+.return-btn span {
+  font-size: 1.1em;
+}
+
+.return-btn:hover {
+  background: #357ab8;
+  transform: translateY(-2px) scale(1.05);
+}
+
+@media (max-width: 400px) {
+  .return-btn {
+    top: 40px;
+    right: 2px;
+    padding: 3px 5px;
+    font-size: 0.9rem;
+    border-radius: 16px;
+  }
+}
+
+@keyframes crumble {
+  0% {
+    opacity: 1;
+    filter: none;
+    transform: scale(1) translateY(0) rotate(0deg);
+    clip-path: inset(0% 0% 0% 0%);
+  }
+  40% {
+    filter: blur(1px);
+    clip-path: inset(0% 0% 0% 0%);
+  }
+  60% {
+    opacity: 0.7;
+    filter: blur(2px);
+    clip-path: inset(10% 10% 10% 10%);
+    transform: scale(1.05) translateY(-10px) rotate(-2deg);
+  }
+  80% {
+    opacity: 0.3;
+    filter: blur(6px);
+    clip-path: inset(30% 30% 30% 30%);
+    transform: scale(1.1) translateY(-30px) rotate(4deg);
+  }
+  100% {
+    opacity: 0;
+    filter: blur(20px);
+    clip-path: inset(50% 50% 50% 50%);
+    transform: scale(1.2) translateY(-60px) rotate(-8deg);
+  }
+}
+
+.crumble-animation {
+  animation: crumble 1.1s cubic-bezier(0.7,0,0.84,0.01) forwards;
+  position: relative;
+  overflow: hidden;
+}
+
+canvas {
+  z-index: 0 !important;
+}
+
+.return-btn {
+  z-index: 9999 !important;
+}
+/* Removed empty ruleset for .content, .page */
+
+.full-scroll-container {
+  height: 100vh;
+  width: 100vw;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.fullpage-section {
+  height: 100vh;
+  width: 100vw;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Optional: add background, padding, etc. */
 } 

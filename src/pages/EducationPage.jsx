@@ -1,5 +1,5 @@
 import SpacePageLayout from '../components/SpacePageLayout';
-import ReturnButton from '../components/ReturnButton';
+
 import { Canvas } from '@react-three/fiber';
 import { useTexture } from '@react-three/drei';
 import { useRef } from 'react';
@@ -24,12 +24,12 @@ const RotatingPlanet = ({ texture, radius }) => {
 const EducationPage = () => {
   return (
     <SpacePageLayout>
-      <Canvas style={{ position: 'absolute', top: 0, left: 0, zIndex: 0, background: 'rgba(0, 0, 0, 0.8)' }}>
+      <Canvas style={{ position: 'absolute', top: 0, left: 0, zIndex: -1, background: 'rgba(0, 0, 0, 0.8)' }}>
         <ambientLight intensity={0.7} />
         <directionalLight position={[5, 5, 5]} intensity={0.5} />
         <RotatingPlanet texture="/textures/jupiter.jpg" radius={3} />
       </Canvas>
-      <div className="content" style={{ position: 'relative', zIndex: 1 }}>
+      <div className="content" style={{ position: 'relative'}}>
         <h1>Education</h1>
         <div className="education-timeline">
           <div className="education-item">
@@ -64,7 +64,7 @@ const EducationPage = () => {
           </div>
         </div>
       </div>
-      <ReturnButton />
+      
     </SpacePageLayout>
   );
 };

@@ -1,5 +1,5 @@
 import SpacePageLayout from '../components/SpacePageLayout';
-import ReturnButton from '../components/ReturnButton';
+
 import { Canvas } from '@react-three/fiber';
 import RotatingPlanet from '../components/RotatingPlanet';
 import ShootingStars from '../components/ShootingStars';
@@ -7,13 +7,13 @@ import ShootingStars from '../components/ShootingStars';
 const CertificationsPage = () => {
   return (
     <SpacePageLayout>
-      <Canvas style={{ position: 'absolute', top: 0, left: 0, zIndex: 0, background: 'rgba(0, 0, 0, 0.8)' }}>
+      <Canvas style={{ position: 'absolute', top: 0, left: 0, zIndex: -1, background: 'rgba(0, 0, 0, 0.8)' }}>
         <ambientLight intensity={0.7} />
         <directionalLight position={[5, 5, 5]} intensity={0.5} />
         <RotatingPlanet texture="/textures/sun.jpg" radius={5} />
         <ShootingStars />
       </Canvas>
-      <div className="content" style={{ position: 'relative', zIndex: 1 }}>
+      <div className="content" style={{ position: 'relative' }}>
         <h1>Certifications & Achievements</h1>
         <div className="certifications">
           <ul>
@@ -29,7 +29,7 @@ const CertificationsPage = () => {
           </ul>
         </div>
       </div>
-      <ReturnButton />
+      
     </SpacePageLayout>
   );
 };
