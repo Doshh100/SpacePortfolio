@@ -51,6 +51,6 @@ Welcome to Tanaka Danny Chijaka's Universe — an interactive, 3D space-themed p
    ```bash
    npm run dev
    ```
-   The app will open at space-portfolio-six-rho.vercel.app
+   The app will open at [space-portfolio-six-rho.vercel.app](https://space-portfolio-six-rho.vercel.app/)
 
 ---
