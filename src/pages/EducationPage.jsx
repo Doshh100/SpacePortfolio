@@ -50,7 +50,7 @@ const EducationPage = () => {
               <li>Rugby Player</li>
               <li>Interact Club President</li>
               <li>National Chess Player</li>
-              <li>Scored 8 Points at A-Level (Mathematics, Physics, and Computer Science)</li>
+              <li>Scored 18 Points at A-Level including Mathematics, Physics, and Computer Science</li>
             </ul>
           </div>
           <div className="education-item">
